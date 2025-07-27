@@ -1,0 +1,110 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+.to-do-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(237, 237, 255);
+    height: 100vh;
+    width: 100%;
+}
+
+h1{
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.add-btn{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: rgb(150, 220, 46);
+    color: white;
+    font-weight: 700;
+    border: 0px;
+    cursor: pointer;
+}
+
+.add-btn:hover{
+    font-size: 15px;
+    background-color: rgb(136, 199, 41);
+}
+
+input{
+    width: 300px;
+    height: 25px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 0px 10px;
+}
+
+
+
+li{
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    list-style: none;
+    background-color: rgb(254, 254, 254);
+    padding: 15px;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li:hover{
+    background-color: rgb(245, 245, 245);
+}
+
+
+
+.text{
+    margin-right: 20px;
+}
+
+.up-btn{
+    margin: 0px 10px;
+}
+
+.dlt-btn{
+    height: 30px;
+    width: 70px;
+    border-radius: 5px;
+    border: 0px;
+    background-color: rgb(241, 103, 48);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.dlt-btn:hover{
+    background-color: rgb(222, 95, 45);
+
+}
+
+.up-btn, .down-btn{
+    border-radius: 5px;
+    height: 30px;
+    border: 1px solid rgb(108, 108, 108);
+    cursor: pointer;
+}
+
+.up-btn:hover{
+    background-color: rgb(221, 219, 219);
+}
+
+
+.down-btn:hover{
+    background-color: rgb(221, 219, 219);
+}
+
+
