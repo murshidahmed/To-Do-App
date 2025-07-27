@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 
 function MainComponent() {
 
-    const [task, setTask] = useState(["Eat"])
+    const [task, setTask] = useState([])
     const [newTask, setNewTask] = useState([]);
 
     const handleInputChange = (e) => {
@@ -11,7 +11,35 @@ function MainComponent() {
     }
 
     const handleAddButton = () => {
-        setTask(t => [...t, newTask])
+
+        if(newTask.trim() !== ""){
+            setTask(t => [...t, newTask])
+            setNewTask("")
+        }
+    }
+
+    const handleRemoveButton = (index) => {
+        const updatedTask = task.filter((element, i) => i !== index)
+        setTask(updatedTask)
+    }
+
+    const handleUpButton = (index) =>{
+
+        if(index > 0){
+            const updatedTask = [...task];
+            [updatedTask[index], updatedTask[index - 1]] = [updatedTask[index - 1], updatedTask[index]];
+            setTask(updatedTask);
+        }
+        
+    }
+
+    const handleDownButton = (index) => {
+        
+        if(index < task.length -1){
+            const updatedTask = [...task];
+            [updatedTask[index], updatedTask[index + 1]] = [updatedTask[index + 1], updatedTask[index]];
+            setTask(updatedTask);
+        }
     }
 
   return (
@@ -22,11 +50,11 @@ function MainComponent() {
         <button className='add-btn' onClick={handleAddButton}>ADD</button>
 
         <ul>
-            {task.map((task, index) => <li key="index">
+            {task.map((task, index) => <li key={index}>
                 <div><span className='text'>{task}</span></div>
-                <div><button className='dlt-btn btn1'>Delete</button>
-                <button className='up-btn btn1'>🔼</button>
-                <button className='down-btn btn1'>🔽</button></div>
+                <div><button className='dlt-btn btn1' onClick={() => handleRemoveButton(index)}>Delete</button>
+                <button className='up-btn btn1' onClick={() => handleUpButton(index)}>🔼</button>
+                <button className='down-btn btn1' onClick={() => handleDownButton(index)}>🔽</button></div>
                 
                 
             </li>)}
