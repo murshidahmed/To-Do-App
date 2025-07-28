@@ -12,10 +12,15 @@ function MainComponent() {
 
     const handleAddButton = () => {
 
-        if(newTask.trim() !== ""){
+       if(newTask.trim() !== ""){
             setTask(t => [...t, newTask])
             setNewTask("")
         }
+        /*const newaAct = document.getElementById("new").value;
+        setNewTask("");
+
+        setTask(t => [...t, newaAct])*/
+
     }
 
     const handleRemoveButton = (index) => {
@@ -46,7 +51,7 @@ function MainComponent() {
     <div className='to-do-container'>
         <h1>To-Do-List </h1>
 
-        <input type='text' placeholder='Enter a Task...' value={newTask} onChange={handleInputChange}></input>
+        <input type='text' /*id="new"*/ placeholder='Enter a Task...' value={newTask} onChange={handleInputChange}></input>
         <button className='add-btn' onClick={handleAddButton}>ADD</button>
 
         <ul>
